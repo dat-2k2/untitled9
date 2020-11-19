@@ -1,3 +1,5 @@
+import os 
+
 class INPUT():
   def INP(self):
     self.separator = input("Enter the sepаrator: ")
@@ -19,8 +21,8 @@ class INPUT():
   def setup(self):
     d = "/content/"
     s = self.namefile + "_tasks"
-    !mkdir -p "$d$s"
     self.script_dir = os.path.join(d,s)
+    os.mkdir(self.script_dir)
     f = open(self.namefile, 'r')
     Lines = f.readlines()
     for x in Lines:
